@@ -10,6 +10,7 @@ import { projects } from "./data/projects";
 function Home() {
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 90, damping: 24, restDelta: 0.001 });
+  let lastSection = "";
 
   return (
     <>
@@ -33,7 +34,18 @@ function Home() {
           <div className="intro-values"><div><Server size={20} /><strong>Scalable</strong><span>확장 가능한 설계</span></div><div><Gauge size={20} /><strong>Observable</strong><span>지표 기반 운영</span></div><div><ShieldCheck size={20} /><strong>Reliable</strong><span>안정성과 보안</span></div></div>
         </section>
 
-        <section className="project-list" aria-label="Cloud projects">{projects.map((project, index) => <ProjectFolder key={project.number} project={project} index={index} />)}</section>
+        <section className="project-list" aria-label="Cloud projects">
+          {projects.map((project, index) => {
+            const showSection = project.section !== lastSection;
+            lastSection = project.section;
+            return (
+              <React.Fragment key={project.number}>
+                {showSection && <div className="project-section-title"><span>{project.section}</span></div>}
+                <ProjectFolder project={project} index={index} />
+              </React.Fragment>
+            );
+          })}
+        </section>
         <footer className="footer"><Mouse size={22} strokeWidth={1.5} /><span>Scroll to explore</span><span className="footer-arrow">⌄</span></footer>
       </MacFrame>
     </>
