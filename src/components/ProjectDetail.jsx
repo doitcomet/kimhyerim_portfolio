@@ -22,13 +22,14 @@ export default function ProjectDetail() {
   return (
     <MacFrame title={`${project.number} · ${project.title}`} compact>
       <article className="detail-page">
-        <Link className="back-link" to="/"><ArrowLeft size={17} /> All Projects</Link>
+        <Link className="back-link" to="/"><ArrowLeft size={17} /> 전체 프로젝트</Link>
 
         <header className="detail-hero">
           <div>
-            <p className="detail-kicker">PROJECT {project.number} / {project.status}</p>
+            <p className="detail-kicker">프로젝트 {project.number} / {project.status}</p>
             <h1>{project.title}</h1>
             <p>{project.summary}</p>
+            <p className="security-note">{project.securityNote}</p>
           </div>
           <div className="detail-stack-list" aria-label="Technology stack">
             {project.stacks.map((stack) => (
@@ -43,13 +44,13 @@ export default function ProjectDetail() {
         <section className="detail-section">
           <div className="section-heading">
             <span>01</span>
-            <div><h2>Architecture</h2><p>실제 아키텍처 이미지를 이 영역에 교체할 수 있습니다.</p></div>
+            <div><h2>참고용 아키텍처</h2><p>보안 기밀 유지를 위해 공개 가능한 수준으로 재구성한 구조입니다.</p></div>
           </div>
           <figure className="architecture-frame">
             {project.architectureImage ? (
               <img src={project.architectureImage} alt={`${project.title} architecture`} />
             ) : (
-              <div className="architecture-placeholder"><ImageIcon size={34} /><strong>Architecture image</strong><code>public/assets/architectures/{project.slug}.png</code></div>
+              <div className="architecture-placeholder"><ImageIcon size={34} /><strong>참고용 아키텍처</strong><code>public/assets/architectures/{project.slug}.png</code></div>
             )}
           </figure>
         </section>
@@ -57,17 +58,22 @@ export default function ProjectDetail() {
         <section className="detail-grid">
           <div className="detail-panel">
             <span className="panel-number">02</span>
-            <h2>Background</h2>
+            <h2>프로젝트 배경</h2>
             <p>{project.background}</p>
           </div>
           <div className="detail-panel">
             <span className="panel-number">03</span>
-            <h2>What I did</h2>
+            <h2>수행한 역할</h2>
             <ul>{project.actions.map((action) => <li key={action}>{action}</li>)}</ul>
           </div>
           <div className="detail-panel detail-panel--wide">
             <span className="panel-number">04</span>
-            <h2>Impact</h2>
+            <h2>배운 점</h2>
+            <p>{project.lessons}</p>
+          </div>
+          <div className="detail-panel detail-panel--wide">
+            <span className="panel-number">05</span>
+            <h2>결과</h2>
             <div className="impact-list">
               {project.impacts.map((impact) => <div key={impact.label}><strong>{impact.value}</strong><span>{impact.label}</span></div>)}
             </div>
@@ -75,8 +81,8 @@ export default function ProjectDetail() {
         </section>
 
         <footer className="detail-footer">
-          <Link to="/">Back to portfolio</Link>
-          <span><ExternalLink size={15} /> Architecture and metrics can be updated later.</span>
+          <Link to="/">포트폴리오로 돌아가기</Link>
+          <span><ExternalLink size={15} /> 보안 기밀 유지를 위해 일부 구성과 식별자는 일반화했습니다.</span>
         </footer>
       </article>
     </MacFrame>

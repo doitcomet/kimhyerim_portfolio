@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, useScroll, useSpring } from "motion/react";
-import { Mouse, Server, Gauge, ShieldCheck } from "lucide-react";
+import { Mouse, Server, Gauge, ShieldCheck, Users } from "lucide-react";
 import { Routes, Route } from "react-router-dom";
 import ProjectFolder from "./components/ProjectFolder";
 import ProjectDetail from "./components/ProjectDetail";
@@ -29,9 +29,9 @@ function Home() {
         </section>
 
         <section className="intro" aria-label="About me">
-          <div className="intro-heading"><span>ABOUT</span><h2>운영 중인 플랫폼을 멈추지 않고<br />표준화와 자동화로 고도화합니다.</h2></div>
-          <p className="intro-copy">클라우드 인프라 운영, 컨테이너 관측성, 무중단 표준화, AI 기반 운영 자동화를 수행해 온 Cloud/AI Infrastructure Engineer입니다. hCloud/HKS와 같은 공장형 플랫폼에서 필요한 것은 화려한 기능보다 장애를 보이게 만들고, 호환성 차이를 실측으로 검증하며, 반복 운영 판단을 안전하게 자동화하는 역량이라고 생각합니다.</p>
-          <div className="intro-values"><div><Server size={20} /><strong>Platform</strong><span>무중단 표준화</span></div><div><Gauge size={20} /><strong>Observability</strong><span>지표·알림 기반 운영</span></div><div><ShieldCheck size={20} /><strong>AI Ops</strong><span>결정론+LLM 자동화</span></div></div>
+          <div className="intro-heading"><span>ABOUT</span><h2>운영 중인 플랫폼을 멈추지 않고<br />함께 검증하며 고도화합니다.</h2></div>
+          <p className="intro-copy">클라우드 엔지니어에게 가장 중요한 태도는 무중단 서비스에 대한 책임감이라고 생각합니다. 클라우드 인프라 운영, 컨테이너 관측성, 무중단 표준화, AI 기반 운영 자동화를 수행하며 장애를 보이게 만들고, 호환성 차이를 실측으로 검증하고, 고객사·유관부서·동료와 같은 기준으로 소통하는 방식을 배웠습니다.</p>
+          <div className="intro-values"><div><Server size={20} /><strong>Platform</strong><span>무중단 표준화</span></div><div><Gauge size={20} /><strong>Observability</strong><span>지표·알림 기반 운영</span></div><div><ShieldCheck size={20} /><strong>Responsibility</strong><span>서비스 신뢰성</span></div><div><Users size={20} /><strong>Collaboration</strong><span>고객·유관부서 협업</span></div></div>
         </section>
 
         <section className="project-list" aria-label="Cloud projects">
