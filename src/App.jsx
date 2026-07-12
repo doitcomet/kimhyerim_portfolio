@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import ProjectFolder from "./components/ProjectFolder";
 import ProjectDetail from "./components/ProjectDetail";
 import MacFrame from "./components/MacFrame";
-import { projects } from "./data/projects";
+import { assetPath, projects } from "./data/projects";
 
 function Home() {
   const { scrollYProgress } = useScroll();
@@ -22,7 +22,7 @@ function Home() {
               <p className="eyebrow">PORTFOLIO / 2026</p>
               <h1>Cloud Infrastructure<br />Engineer</h1>
             </div>
-            <motion.img src="/assets/boards/board1.png" alt="Hyundai AutoEver vintage board" className="hero-board" initial={{ opacity: 0, scale: 0.72, rotate: 22, y: 30 }} animate={{ opacity: 1, scale: 1, rotate: 10, y: 0 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }} whileHover={{ rotate: 7, scale: 1.03 }} />
+            <motion.img src={assetPath("assets/boards/board1.png")} alt="Hyundai AutoEver vintage board" className="hero-board" initial={{ opacity: 0, scale: 0.72, rotate: 22, y: 30 }} animate={{ opacity: 1, scale: 1, rotate: 10, y: 0 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }} whileHover={{ rotate: 7, scale: 1.03 }} />
           </div>
           <p className="hero-copy">Building scalable, reliable,<br />and secure cloud infrastructure.</p>
           <p className="author">Portfolio by <strong>HYERIM KIM</strong></p>
