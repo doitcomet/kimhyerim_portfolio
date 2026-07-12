@@ -86,14 +86,6 @@ export default function ProjectFolder({ project, index }) {
         <span>{project.status}</span>
         <span className="open-hint">상세 보기</span>
       </div>
-      <div className="project-quickfacts" aria-label={`${project.title} 핵심 지표`}>
-        {project.impacts.map((impact) => (
-          <span key={impact.label}>
-            <strong>{impact.value}</strong>
-            <em>{impact.label}</em>
-          </span>
-        ))}
-      </div>
     </motion.article>
   );
 }

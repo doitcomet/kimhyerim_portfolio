@@ -93,9 +93,7 @@ export const projects = [
       stack("AWS Graviton", "aws-graviton-logo.png", "AWS", 0, 1),
       stack("ARM", "ARM_logo.svg", "ARM", 1, 1),
       stack("AMD", "amd-logo.webp", "AMD", 2, 1),
-      stack("Grafana", "grafana-logo.png", "G", 3, 1),
-      stack("Python", "python-logo.webp", "Py", 4, 1),
-      stack("Slack", "slack-logo.png", "S", 5, 1)
+      stack("Python", "python-logo.webp", "Py", 3, 1)
     ]
   },
   {

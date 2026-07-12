@@ -520,43 +520,6 @@ img {
   padding-left: 9%;
 }
 
-.project-quickfacts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 12px;
-  padding-left: 35%;
-}
-
-.project-row--left .project-quickfacts {
-  padding-left: 9%;
-}
-
-.project-quickfacts span {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 6px;
-  min-height: 32px;
-  padding: 0 10px;
-  border: 1px solid rgba(16, 42, 76, 0.08);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.72);
-  box-shadow: 0 10px 24px rgba(24, 46, 70, 0.06);
-}
-
-.project-quickfacts strong {
-  color: #0c4f92;
-  font-size: 0.82rem;
-  font-weight: 880;
-}
-
-.project-quickfacts em {
-  color: #697d91;
-  font-size: 0.72rem;
-  font-style: normal;
-  font-weight: 650;
-}
-
 .status-dot {
   width: 11px;
   height: 11px;
@@ -648,9 +611,7 @@ img {
   }
 
   .project-label,
-  .project-row--left .project-label,
-  .project-quickfacts,
-  .project-row--left .project-quickfacts {
+  .project-row--left .project-label {
     padding-left: 8%;
     padding-right: 8%;
   }
