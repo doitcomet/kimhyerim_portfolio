@@ -24,7 +24,13 @@ function Home() {
             </div>
             <motion.img src={assetPath("assets/boards/board1.png")} alt="Hyundai AutoEver vintage board" className="hero-board" initial={{ opacity: 0, scale: 0.72, rotate: 22, y: 30 }} animate={{ opacity: 1, scale: 1, rotate: 10, y: 0 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }} whileHover={{ rotate: 7, scale: 1.03 }} />
           </div>
-          <p className="hero-copy">Building observable, automated platforms<br />for AI Cloud and container operations.</p>
+          <p className="hero-copy">AI Cloud와 컨테이너 플랫폼을 위한<br />관측 가능하고 자동화된 인프라를 만듭니다.</p>
+          <div className="hero-focus" aria-label="Target role keywords">
+            <span>hCloud/HKS</span>
+            <span>Container Platform</span>
+            <span>Observability</span>
+            <span>AIOps</span>
+          </div>
           <p className="author">Portfolio by <strong>김혜림</strong></p>
         </section>
 

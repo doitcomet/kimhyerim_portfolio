@@ -2,6 +2,7 @@ import React from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef, useMemo } from "react";
 import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
 import StackLogo from "./StackLogo";
 
 function seededRandom(seed) {
@@ -56,6 +57,14 @@ export default function ProjectFolder({ project, index }) {
         </motion.div>
 
         <Link className="folder-link" to={`/projects/${project.slug}`} aria-label={`${project.title} 프로젝트 자세히 보기`}>
+          <motion.span
+            className="folder-guide"
+            style={{ y: folderY, opacity: folderOpacity }}
+          >
+            <strong>폴더 클릭</strong>
+            <span>상세 내용과 아키텍처 보기</span>
+            <ArrowUpRight size={14} strokeWidth={2} />
+          </motion.span>
           <motion.div
             className="folder"
             style={{ y: folderY, scale: folderScale, rotate: folderRotate, opacity: folderOpacity }}
@@ -72,7 +81,19 @@ export default function ProjectFolder({ project, index }) {
           </motion.div>
         </Link>
       </div>
-      <div className="project-label"><span className="status-dot" style={{ backgroundColor: project.accent }} /><span>{project.status}</span><span className="open-hint">Open folder ↗</span></div>
+      <div className="project-label">
+        <span className="status-dot" style={{ backgroundColor: project.accent }} />
+        <span>{project.status}</span>
+        <span className="open-hint">상세 보기</span>
+      </div>
+      <div className="project-quickfacts" aria-label={`${project.title} 핵심 지표`}>
+        {project.impacts.map((impact) => (
+          <span key={impact.label}>
+            <strong>{impact.value}</strong>
+            <em>{impact.label}</em>
+          </span>
+        ))}
+      </div>
     </motion.article>
   );
 }
