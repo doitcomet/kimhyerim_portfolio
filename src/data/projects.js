@@ -36,8 +36,8 @@ export const projects = [
     carName: "Pony Excel",
     carYear: "1980",
     architectureImage: assetPath("assets/architectures/niffler-public-reference.png"),
-    summary: "고객사 모니터링 플랫폼이 Niffler 1.0에서 2.0으로 전환되며, 수집·저장·시각화·알림 체계를 OpenTelemetry, Prometheus, Grafana 기준으로 재구성한 대표 프로젝트입니다.",
-    background: "기존 구조는 Telegraf, InfluxDB, 커스텀 스크립트, 사내 메신저 알림에 강하게 결합되어 있었습니다. Niffler 2.0 전환 과정에서 Telegraf 대신 OpenTelemetry Collector를 사용해야 했고, 기존 커스텀 메트릭 자산을 버리지 않으면서 신규 표준으로 흡수하는 방식이 필요했습니다.",
+    summary: "고객사 모니터링 플랫폼이 신규 구조로 전환되며, 수집·저장·시각화·알림 체계를 OpenTelemetry, Prometheus, Grafana 기준으로 재구성한 대표 프로젝트입니다.",
+    background: "기존 구조는 Telegraf, InfluxDB, 커스텀 스크립트, 사내 메신저 알림에 강하게 결합되어 있었습니다. 신규 모니터링 체계 전환 과정에서 Telegraf 대신 OpenTelemetry Collector를 사용해야 했고, 기존 커스텀 메트릭 자산을 버리지 않으면서 신규 표준으로 흡수하는 방식이 필요했습니다.",
     actions: [
       "EC2/VM에는 OpenTelemetry Collector Contrib를 직접 설치하고, K8S에는 Helm 기반 DaemonSet 방식으로 수집 구성을 배포했습니다.",
       "기존 Telegraf inputs.exec 기반 shell/python 커스텀 메트릭은 Python OTel Bridge로 변환해 OTLP HTTP Collector로 전달했습니다.",
