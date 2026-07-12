@@ -73,7 +73,7 @@ export const projects = [
     carAlt: "현대 포니",
     carName: "Pony",
     carYear: "1970",
-    architectureImage: assetPath("assets/architectures/graviton-public-reference.png"),
+    architectureImage: assetPath("assets/architectures/graviton-standardization-reference.svg"),
     summary: "운영 중인 EC2 120대를 x86에서 Graviton 기반으로 전환하고, 혼재된 OS를 AL2023 중심으로 표준화해 약 25% 컴퓨팅 비용 절감을 달성한 프로젝트입니다.",
     background: "단순 인스턴스 교체가 아니라 CPU 아키텍처와 OS를 동시에 바꾸는 이중 마이그레이션이었습니다. OTA/FOTA 서비스 특성상 중단 없는 전환이 전제였기 때문에, 기존 서버의 역할과 설정을 정확히 파악하고 신구 병행 운영으로 리스크를 낮추는 것이 핵심이었습니다.",
     actions: [
@@ -110,7 +110,7 @@ export const projects = [
     carAlt: "현대 코티나",
     carName: "Cortina",
     carYear: "1960",
-    architectureImage: assetPath("assets/architectures/secguard-ai-reference.svg"),
+    architectureImage: assetPath("assets/architectures/secguard-ai-reference.png"),
     summary: "멀티 계정·멀티 리전 환경에 누적되는 미사용 보안그룹을 탐지하고, 삭제 검토 근거를 자연어 리포트로 제공하는 AI 운영 보조 프로젝트입니다.",
     background: "보안그룹은 임시 테스트나 종료된 프로젝트 이후에도 남아 공격 표면과 감사 부담을 키울 수 있습니다. 단순 ENI 연결 여부만 보면 오탐이 발생하므로 참조 그래프를 결정론적으로 확인하고, Bedrock은 사람이 읽을 수 있는 근거 서술에만 사용했습니다.",
     actions: [
@@ -146,10 +146,11 @@ export const projects = [
     carAlt: "현대 티뷰론",
     carName: "Tiburon",
     carYear: "1990",
-    architectureImage: assetPath("assets/architectures/aiops-public-reference.png"),
-    summary: "SecGuard AI 경험을 확장해 알람 분석, 이상 탐지, ChatOps 승인, 자원 분류를 연결하는 AIOps 흐름을 설계 및 검증 중인 PoC입니다.",
-    background: "이 프로젝트는 운영 적용이 완료된 산출물이 아니라, AI Cloud 환경에서 반복 운영 판단을 어떻게 안전하게 보조할 수 있는지 검증하는 단계입니다. 완전 자동 조치보다 승인 기반 ChatOps와 근거 중심 리포팅을 우선합니다.",
+    architectureImage: assetPath("assets/architectures/aiops-agentcore-reference.svg"),
+    summary: "SecGuard AI 경험을 확장해 AgentCore Runtime 중심으로 알람 분석, 이상 탐지, ChatOps 승인, 자원 분류를 연결하는 AIOps 흐름을 설계 및 검증 중인 PoC입니다.",
+    background: "이 프로젝트는 운영 적용이 완료된 산출물이 아니라, AI Cloud 환경에서 반복 운영 판단을 어떻게 안전하게 보조할 수 있는지 검증하는 단계입니다. 공개된 AgentCore 구성 요소의 Runtime, Gateway, Memory, Identity, Observability 개념을 바탕으로 완전 자동 조치보다 승인 기반 ChatOps와 근거 중심 리포팅을 우선합니다.",
     actions: [
+      "AgentCore Runtime을 공통 실행 계층으로 두고 Gateway, Memory, Identity, Observability 성격의 책임을 나눠 PoC 구조를 설계하고 있습니다.",
       "알람 분석 에이전트가 Grafana/CloudWatch 성격의 이벤트를 요약하고 우선순위를 분류하는 흐름을 설계하고 있습니다.",
       "이상 탐지 결과와 SecGuard AI의 자원 분류 결과를 연결해 운영자가 검토할 수 있는 컨텍스트를 구성 중입니다.",
       "Slack 기반 ChatOps 승인 흐름을 두어 운영 적용 전 사람의 확인 단계를 유지하는 구조로 검증하고 있습니다.",
