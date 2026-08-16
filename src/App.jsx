@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import ProjectFolder from "./components/ProjectFolder";
 import ProjectDetail from "./components/ProjectDetail";
 import MacFrame from "./components/MacFrame";
-import { assetPath, projects } from "./data/projects";
+import { projects } from "./data/projects";
 
 function Home() {
   const { scrollYProgress } = useScroll();
@@ -20,24 +20,23 @@ function Home() {
           <div className="hero-title-wrap">
             <div className="hero-text">
               <p className="eyebrow">PLATFORM ENGINEERING / 2026</p>
-              <h1>Cloud/AI Infrastructure<br />Engineer</h1>
+              <h1>Cloud / ML Platform<br />Engineer</h1>
             </div>
-            <motion.img src={assetPath("assets/boards/board1.png")} alt="Hyundai AutoEver vintage board" className="hero-board" initial={{ opacity: 0, scale: 0.72, rotate: 22, y: 30 }} animate={{ opacity: 1, scale: 1, rotate: 10, y: 0 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }} whileHover={{ rotate: 7, scale: 1.03 }} />
           </div>
-          <p className="hero-copy">AI Cloud와 컨테이너 플랫폼을 위한<br />관측 가능하고 자동화된 인프라를 만듭니다.</p>
-          <div className="hero-focus" aria-label="Target role keywords">
-            <span>hCloud/HKS</span>
-            <span>Container Platform</span>
+          <p className="hero-copy">대규모 서비스 운영 경험을 기반으로<br />AI가 안정적으로 실행될 수 있는 플랫폼을 만듭니다.</p>
+          <div className="hero-focus" aria-label="Platform engineering keywords">
+            <span>Kubernetes</span>
             <span>Observability</span>
-            <span>AIOps</span>
+            <span>Cloud Platform</span>
+            <span>LLMOps / AIOps</span>
           </div>
           <p className="author">Portfolio by <strong>김혜림</strong></p>
         </section>
 
         <section className="intro" aria-label="About me">
-          <div className="intro-heading"><span>ABOUT</span><h2>운영 중인 플랫폼을 멈추지 않고<br />함께 검증하며 고도화합니다.</h2></div>
-          <p className="intro-copy">클라우드 엔지니어에게 가장 중요한 태도는 무중단 서비스에 대한 책임감이라고 생각합니다. 클라우드 인프라 운영, 컨테이너 관측성, 무중단 표준화, AI 기반 운영 자동화를 수행하며 장애를 보이게 만들고, 호환성 차이를 실측으로 검증하고, 고객사·유관부서·동료와 같은 기준으로 소통하는 방식을 배웠습니다.</p>
-          <div className="intro-values"><div><Server size={20} /><strong>Platform</strong><span>무중단 표준화</span></div><div><Gauge size={20} /><strong>Observability</strong><span>지표·알림 기반 운영</span></div><div><ShieldCheck size={20} /><strong>Responsibility</strong><span>서비스 신뢰성</span></div><div><Users size={20} /><strong>Collaboration</strong><span>고객·유관부서 협업</span></div></div>
+          <div className="intro-heading"><span>ABOUT</span><h2>운영 문제를 발견하면<br />구조와 자동화로 해결합니다.</h2></div>
+          <p className="intro-copy">대규모 AWS 프로덕션 환경을 운영하며 관측성 플랫폼 전환, Graviton 기반 비용 최적화, Kubernetes 운영, AI 기반 운영 자동화를 수행했습니다. 반복 작업을 줄이고 장애를 더 빨리 발견하며, 다른 팀이 인프라보다 본질적인 문제에 집중할 수 있는 플랫폼을 만드는 엔지니어를 지향합니다.</p>
+          <div className="intro-values"><div><Server size={20} /><strong>Platform</strong><span>표준화와 운영 자동화</span></div><div><Gauge size={20} /><strong>Observability</strong><span>지표·알림 기반 운영</span></div><div><ShieldCheck size={20} /><strong>Reliability</strong><span>프로덕션 안정성</span></div><div><Users size={20} /><strong>Collaboration</strong><span>개발·운영팀 협업</span></div></div>
         </section>
 
         <section className="project-list" aria-label="Cloud projects">
