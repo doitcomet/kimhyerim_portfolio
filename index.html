@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function (location) {
+        if (location.search[1] === "/") {
+          var decodedPath = location.search
+            .slice(1)
+            .split("&")
+            .map(function (value) {
+              return value.replace(/~and~/g, "&");
+            })
+            .join("?");
+
+          window.history.replaceState(
+            null,
+            null,
+            location.pathname.slice(0, -1) + decodedPath + location.hash
+          );
+        }
+      })(window.location);
+    </script>
+
+    <!-- Google Analytics (GA4) · hrs99 Portfolio -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C3ER91HQ3R"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-C3ER91HQ3R', {
+        page_path: window.location.pathname + window.location.search + window.location.hash
+      });
+      gtag('event', 'portfolio_visit', {
+        portfolio_id: 'hrs99'
+      });
+
+      window.addEventListener('hashchange', function () {
+        gtag('event', 'page_view', {
+          page_title: document.title,
+          page_location: window.location.href,
+          page_path: window.location.pathname + window.location.search + window.location.hash,
+          portfolio_id: 'hrs99'
+        });
+      });
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f5f7" />
+    <meta
+      name="description"
+      content="김혜림 ML Platform / Cloud Infrastructure Engineer 포트폴리오. 대규모 AWS 운영, Kubernetes, Observability, 비용 최적화, Bedrock 기반 운영 자동화 경험을 정리했습니다."
+    />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="김혜림 포트폴리오" />
+    <meta property="og:title" content="김혜림 · ML Platform / Cloud Engineer" />
+    <meta
+      property="og:description"
+      content="Kubernetes, Observability, Cloud Platform, LLMOps/AIOps 관점에서 운영 경험과 프로젝트를 정리한 포트폴리오입니다."
+    />
+    <meta property="og:url" content="https://doitcomet.github.io/kimhyerim_portfolio/" />
+    <meta property="og:image:alt" content="김혜림 ML Platform / Cloud Engineer portfolio preview" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="김혜림 · ML Platform / Cloud Engineer" />
+    <meta
+      name="twitter:description"
+      content="대규모 AWS 운영, Kubernetes, Observability, 비용 최적화, AI 운영 자동화 경험을 담은 포트폴리오입니다."
+    />
+    <title>김혜림 · ML Platform / Cloud Engineer</title>
+    <script type="module" crossorigin src="/kimhyerim_portfolio/assets/index-CVYaKRIG.js"></script>
+    <link rel="stylesheet" crossorigin href="/kimhyerim_portfolio/assets/index-CgpHvnTN.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

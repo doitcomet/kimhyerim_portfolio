@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="720" viewBox="0 0 1400 720">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f7fbff"/>
+      <stop offset="1" stop-color="#eaf2fb"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" x2="1">
+      <stop offset="0" stop-color="#85c8ff"/>
+      <stop offset="1" stop-color="#4f9ee9"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#1b4169" flood-opacity=".14"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10" fill="none" stroke="#55708f" stroke-width="2"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="720" rx="34" fill="url(#bg)"/>
+  <text x="64" y="72" fill="#12345a" font-family="Inter, Apple SD Gothic Neo, sans-serif" font-size="34" font-weight="800">Niffler Monitoring Platform Migration</text>
+  <text x="64" y="108" fill="#61758c" font-family="Inter, Apple SD Gothic Neo, sans-serif" font-size="18">AS-IS Niffler 1.0 → TO-BE Niffler 2.0 · dual-run migration across STG / PRD / DR / Private Cloud</text>
+
+  <g transform="translate(64 154)">
+    <rect width="586" height="460" rx="26" fill="#ffffff" stroke="#d8e5f2" filter="url(#shadow)"/>
+    <text x="34" y="54" fill="#244665" font-family="Inter, Apple SD Gothic Neo, sans-serif" font-size="22" font-weight="800">AS-IS · Niffler 1.0</text>
+    <text x="34" y="84" fill="#7890a8" font-family="Inter, Apple SD Gothic Neo, sans-serif" font-size="14">custom ingest / InfluxQL / internal messenger dependency</text>
+
+    <g font-family="Inter, Apple SD Gothic Neo, sans-serif" font-size="15" font-weight="700">
+      <rect x="42" y="140" width="132" height="70" rx="16" fill="#f1f7ff" stroke="#cfe0f2"/>
+      <text x="108" y="182" text-anchor="middle" fill="#20445f">EC2 / VM</text>
+      <rect x="42" y="250" width="132" height="70" rx="16" fill="#f1f7ff" stroke="#cfe0f2"/>
+      <text x="108" y="292" text-anchor="middle" fill="#20445f">EKS Pods</text>
+      <rect x="226" y="140" width="150" height="70" rx="16" fill="#fff8ef" stroke="#f2d8b8"/>
+      <text x="301" y="182" text-anchor="middle" fill="#7a4a10">Telegraf</text>
+      <rect x="226" y="250" width="150" height="70" rx="16" fill="#fff8ef" stroke="#f2d8b8"/>
+      <text x="301" y="292" text-anchor="middle" fill="#7a4a10">inputs.exec</text>
+      <rect x="420" y="168" width="126" height="98" rx="18" fill="#f4f2ff" stroke="#ddd6fe"/>
+      <text x="483" y="210" text-anchor="middle" fill="#4c3f8d">Custom</text>
+      <text x="483" y="234" text-anchor="middle" fill="#4c3f8d">Ingest</text>
+      <rect x="420" y="328" width="126" height="70" rx="16" fill="#eefaf3" stroke="#ccebd8"/>
+      <text x="483" y="370" text-anchor="middle" fill="#25633f">InfluxDB</text>
+    </g>
+    <g stroke="#55708f" stroke-width="2.4" fill="none" marker-end="url(#arrow)">
+      <path d="M174 175 H226"/>
+      <path d="M174 285 H226"/>
+      <path d="M376 175 C398 175 398 204 420 204"/>
+      <path d="M376 285 C402 285 398 238 420 238"/>
+      <path d="M483 266 V328"/>
+    </g>
+  </g>
+
+  <g transform="translate(750 154)">
+    <rect width="586" height="460" rx="26" fill="#ffffff" stroke="#d8e5f2" filter="url(#shadow)"/>
+    <text x="34" y="54" fill="#244665" font-family="Inter, Apple SD Gothic Neo, sans-serif" font-size="22" font-weight="800">TO-BE · Niffler 2.0</text>
+    <text x="34" y="84" fill="#7890a8" font-family="Inter, Apple SD Gothic Neo, sans-serif" font-size="14">OpenTelemetry / Prometheus / Grafana / Slack alerting</text>
+
+    <g font-family="Inter, Apple SD Gothic Neo, sans-serif" font-size="15" font-weight="700">
+      <rect x="42" y="126" width="132" height="70" rx="16" fill="#f1f7ff" stroke="#cfe0f2"/>
+      <text x="108" y="168" text-anchor="middle" fill="#20445f">EC2 / VM</text>
+      <rect x="42" y="228" width="132" height="70" rx="16" fill="#f1f7ff" stroke="#cfe0f2"/>
+      <text x="108" y="270" text-anchor="middle" fill="#20445f">EKS Pods</text>
+      <rect x="42" y="330" width="132" height="70" rx="16" fill="#f1f7ff" stroke="#cfe0f2"/>
+      <text x="108" y="372" text-anchor="middle" fill="#20445f">Legacy Scripts</text>
+      <rect x="224" y="126" width="154" height="70" rx="16" fill="#fff8ef" stroke="#f2d8b8"/>
+      <text x="301" y="168" text-anchor="middle" fill="#7a4a10">OTel Collector</text>
+      <rect x="224" y="330" width="154" height="70" rx="16" fill="#fff8ef" stroke="#f2d8b8"/>
+      <text x="301" y="358" text-anchor="middle" fill="#7a4a10">Python</text>
+      <text x="301" y="380" text-anchor="middle" fill="#7a4a10">OTel Bridge</text>
+      <rect x="428" y="126" width="122" height="70" rx="16" fill="#fff3f1" stroke="#ffd3cc"/>
+      <text x="489" y="168" text-anchor="middle" fill="#b7432d">Prometheus</text>
+      <rect x="428" y="228" width="122" height="70" rx="16" fill="#fff6e8" stroke="#ffd99d"/>
+      <text x="489" y="270" text-anchor="middle" fill="#9a5a00">Grafana</text>
+      <rect x="428" y="330" width="122" height="70" rx="16" fill="#f2f9ff" stroke="#cfe7ff"/>
+      <text x="489" y="372" text-anchor="middle" fill="#265f8c">Slack Alert</text>
+    </g>
+    <g stroke="#55708f" stroke-width="2.4" fill="none" marker-end="url(#arrow)">
+      <path d="M174 161 H224"/>
+      <path d="M174 263 C200 263 198 161 224 161"/>
+      <path d="M174 365 H224"/>
+      <path d="M378 161 H428"/>
+      <path d="M489 196 V228"/>
+      <path d="M489 298 V330"/>
+      <path d="M378 365 C410 365 400 192 428 192"/>
+    </g>
+  </g>
+
+  <g transform="translate(476 637)">
+    <rect width="448" height="40" rx="20" fill="url(#blue)" opacity=".95"/>
+    <text x="224" y="26" text-anchor="middle" fill="#ffffff" font-family="Inter, Apple SD Gothic Neo, sans-serif" font-size="15" font-weight="800">Dual-run migration · Keep Last State · Pending Period tuning</text>
+  </g>
+</svg>
