@@ -8,6 +8,9 @@ export default function ProjectDetail() {
   const { slug } = useParams();
   const project = projects.find((item) => item.slug === slug);
   const isAgentCore = project?.slug === "bedrock-agentcore-aiops-poc";
+  const architectureImage = isAgentCore
+    ? `${import.meta.env.BASE_URL}assets/architectures/AIOp%20Architecture.png`
+    : project?.architectureImage;
 
   if (!project) {
     return (
@@ -56,9 +59,9 @@ export default function ProjectDetail() {
               padding: 0
             } : undefined}
           >
-            {project.architectureImage ? (
+            {architectureImage ? (
               <img
-                src={project.architectureImage}
+                src={architectureImage}
                 alt={`${project.title} architecture`}
                 style={isAgentCore ? {
                   width: "100%",
