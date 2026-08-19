@@ -128,7 +128,7 @@ export const projects = [
     subtitle: "운영 적용 전 기술 검증 단계",
     status: "PoC 검증 중",
     accent: "#0a84ff",
-    architectureImage: assetPath("assets/architectures/aiops-agentcore-reference.svg"),
+    architectureImage: assetPath("assets/architectures/aiops-agentcore-architecture.webp"),
     summary: "SecGuard AI 경험을 확장해 AgentCore Runtime 중심으로 알람 분석, 이상 탐지, ChatOps 승인, 자원 분류를 연결하는 AIOps 흐름을 설계 및 검증 중인 PoC입니다.",
     background: "이 프로젝트는 운영 적용이 완료된 산출물이 아니라, AI Cloud 환경에서 반복 운영 판단을 어떻게 안전하게 보조할 수 있는지 검증하는 단계입니다. 공개된 AgentCore 구성 요소의 Runtime, Gateway, Memory, Identity, Observability 개념을 바탕으로 완전 자동 조치보다 승인 기반 ChatOps와 근거 중심 리포팅을 우선합니다.",
     actions: [
