@@ -7,6 +7,7 @@ import MacFrame from "./MacFrame";
 export default function ProjectDetail() {
   const { slug } = useParams();
   const project = projects.find((item) => item.slug === slug);
+  const isAgentCore = project?.slug === "bedrock-agentcore-aiops-poc";
 
   if (!project) {
     return (
@@ -46,9 +47,28 @@ export default function ProjectDetail() {
             <span>01</span>
             <div><h2>참고용 아키텍처</h2><p>보안 기밀 유지를 위해 공개 가능한 수준으로 재구성한 구조입니다.</p></div>
           </div>
-          <figure className="architecture-frame">
+          <figure
+            className="architecture-frame"
+            style={isAgentCore ? {
+              minHeight: 0,
+              aspectRatio: "1522 / 790",
+              background: "#ffffff",
+              padding: 0
+            } : undefined}
+          >
             {project.architectureImage ? (
-              <img src={project.architectureImage} alt={`${project.title} architecture`} />
+              <img
+                src={project.architectureImage}
+                alt={`${project.title} architecture`}
+                style={isAgentCore ? {
+                  width: "100%",
+                  height: "100%",
+                  maxHeight: "none",
+                  objectFit: "contain",
+                  objectPosition: "center",
+                  background: "#ffffff"
+                } : undefined}
+              />
             ) : (
               <div className="architecture-placeholder"><ImageIcon size={34} /><strong>참고용 아키텍처</strong><code>public/assets/architectures/{project.slug}.png</code></div>
             )}
