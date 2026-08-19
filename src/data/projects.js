@@ -122,28 +122,28 @@ export const projects = [
   },
   {
     number: "04",
-    section: "AIOps 검증",
+    section: "Agentic AIOps 검증",
     slug: "bedrock-agentcore-aiops-poc",
     title: "Bedrock AgentCore AIOps 검증",
-    subtitle: "운영 적용 전 기술 검증 단계",
+    subtitle: "Orchestrator · Multi-Agent · MCP Gateway 기반 운영 자동화 PoC",
     status: "PoC 검증 중",
     accent: "#0a84ff",
-    architectureImage: assetPath("assets/architectures/aiops-agentcore-architecture.webp"),
-    summary: "SecGuard AI 경험을 확장해 AgentCore Runtime 중심으로 알람 분석, 이상 탐지, ChatOps 승인, 자원 분류를 연결하는 AIOps 흐름을 설계 및 검증 중인 PoC입니다.",
-    background: "이 프로젝트는 운영 적용이 완료된 산출물이 아니라, AI Cloud 환경에서 반복 운영 판단을 어떻게 안전하게 보조할 수 있는지 검증하는 단계입니다. 공개된 AgentCore 구성 요소의 Runtime, Gateway, Memory, Identity, Observability 개념을 바탕으로 완전 자동 조치보다 승인 기반 ChatOps와 근거 중심 리포팅을 우선합니다.",
+    architectureImage: assetPath("assets/architectures/fota-ai-multi-agent.svg"),
+    summary: "FOTA 운영 이벤트를 Orchestrator가 해석하고 알람 분석·이상 탐지·미사용 자원 탐지 Agent에 라우팅한 뒤, AgentCore Gateway의 공통 MCP Tool Registry를 통해 필요한 운영 도구를 호출하도록 설계·검증 중인 Multi-Agent AIOps PoC입니다.",
+    background: "기존 SecGuard AI와 모니터링 자동화 경험을 확장해, 개별 스크립트나 단일 Agent가 아니라 여러 운영 Agent가 동일한 도구 체계를 안전하게 공유할 수 있는 구조를 검증하고 있습니다. 핵심은 AgentCore Runtime을 실행 계층으로 두고, AgentCore Gateway를 단일 MCP 진입점으로 사용해 AWS·Niffler·Resource Inspect·Ops 도구 접근을 분리하는 것입니다.",
     actions: [
-      "AgentCore Runtime을 공통 실행 계층으로 두고 Gateway, Memory, Identity, Observability 성격의 책임을 나눠 PoC 구조를 설계하고 있습니다.",
-      "알람 분석 에이전트가 Grafana/CloudWatch 성격의 이벤트를 요약하고 우선순위를 분류하는 흐름을 설계하고 있습니다.",
-      "이상 탐지 결과와 SecGuard AI의 자원 분류 결과를 연결해 운영자가 검토할 수 있는 컨텍스트를 구성 중입니다.",
-      "Slack 기반 ChatOps 승인 흐름을 두어 운영 적용 전 사람의 확인 단계를 유지하는 구조로 검증하고 있습니다.",
-      "현재는 진행 중인 PoC이며, 운영 적용 전 기술 검증 단계로 범위를 제한하고 있습니다."
+      "EventBridge와 Lambda를 진입점으로 두고 FOTA SecAIOps Orchestrator Agent가 요청 유형에 따라 알람 분석·이상 탐지·미사용 자원 탐지 Agent를 선택하도록 설계했습니다.",
+      "AgentCore Gateway에 AWS MCP, Niffler MCP, Resource Inspect MCP, Ops MCP를 공통 Tool Registry 형태로 구성해 Agent별 도구 접근 경계를 분리했습니다.",
+      "알람 분석 Agent는 Niffler·CloudWatch·EKS·Knowledge Base를 조합해 운영 컨텍스트를 정리하고 Slack으로 결과를 전달하는 흐름을 구성했습니다.",
+      "이상 탐지 Agent는 CloudWatch·EKS·CloudTrail·Knowledge Base를 활용해 원인 후보를 수집하고 Slack 결과 전송까지 연결하는 흐름을 검증하고 있습니다.",
+      "미사용 자원 탐지 Agent는 EC2·ENI·VPC Flow Logs·EIP·Lambda·Subnet을 점검하고 Knowledge Base를 참조해 주 1회 SES Email 리포트로 전달하는 구조를 설계했습니다."
     ],
-    lessons: "AIOps는 장애를 대신 해결하는 마법이 아니라, 알람의 맥락을 정리하고 담당자가 더 빨리 판단하도록 돕는 구조여야 한다고 보고 있습니다. PoC 단계에서는 완성도보다 책임 경계와 승인 흐름을 먼저 검증하고 있습니다.",
-    securityNote: "운영 적용 전 기술 검증 단계의 참고용 구조입니다. 실제 운영 계정, 고객사 정보, 내부 자동화 세부 구현은 포함하지 않았습니다.",
+    lessons: "Agent를 늘리는 것보다 중요한 것은 여러 Agent가 어떤 도구를 어떤 경계로 공유하는지 표준화하는 것이라고 판단했습니다. Orchestrator는 업무를 분배하고, Gateway/MCP는 Tool 접근을 통제하며, 각 Agent는 자신의 운영 책임에 집중하도록 역할을 나누는 방향으로 검증하고 있습니다.",
+    securityNote: "현재 운영 적용 전 기술 검증 단계이며, 공개 포트폴리오에서는 실제 계정·리소스 식별자·내부 엔드포인트와 세부 자동화 구현을 제외했습니다.",
     impacts: [
-      { value: "PoC", label: "설계 및 검증 중" },
-      { value: "ChatOps", label: "사람 승인 흐름" },
-      { value: "AIOps", label: "장애 사전 감지" }
+      { value: "3 Agents", label: "운영 역할별 분리" },
+      { value: "4 MCP", label: "공통 Tool Registry" },
+      { value: "AgentCore", label: "Runtime·Gateway 검증" }
     ],
     stacks: [
       stack("Slack", "slack-logo.png", "S", 0, 3),
