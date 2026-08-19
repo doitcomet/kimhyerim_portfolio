@@ -21,6 +21,30 @@
         }
       })(window.location);
     </script>
+
+    <!-- Google Analytics (GA4) · hrs99 Portfolio -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C3ER91HQ3R"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-C3ER91HQ3R', {
+        page_path: window.location.pathname + window.location.search + window.location.hash
+      });
+      gtag('event', 'portfolio_visit', {
+        portfolio_id: 'hrs99'
+      });
+
+      window.addEventListener('hashchange', function () {
+        gtag('event', 'page_view', {
+          page_title: document.title,
+          page_location: window.location.href,
+          page_path: window.location.pathname + window.location.search + window.location.hash,
+          portfolio_id: 'hrs99'
+        });
+      });
+    </script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f4f5f7" />
     <meta
